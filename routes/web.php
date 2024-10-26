@@ -18,3 +18,13 @@ Route::get('/contact', function () {
 Route::get('/login', function () {
     return view('auth.login');
 })->name('login');
+
+Route::prefix('admin')->group(function () {
+    Route::get('/users', function () {
+        return view('admin.user.index');
+    })->name('admin.user.index');
+
+});
+
+
+

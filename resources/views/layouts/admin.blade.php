@@ -23,13 +23,13 @@
 
     <title>Admin Panel</title>
     @vite(['resources/css/app.css','resources/css/admin.css', 'resources/js/app.js','resources/js/admin.js'])
-    @livewireStyles
+
 </head>
 <body class="text-gray-800 font-inter " >
 <!--sidenav -->
 <div class="container-admin fixed left-0 top-0 w-64 h-full bg-[#ffffff] p-4 z-50 sidebar-menu transition-transform border-r border-gray-300 overflow-y-auto no-scrollbar">
     <div class="flex">
-        <img class="w-12 h-12 rounded-full" src="{{asset('storage/image/logo/logo.jpeg')}}" alt="Logo Technic Service"/>
+        <img class="w-12 h-12 rounded-full" src="{{asset('image/logo.png')}}" alt="Logo Technic Service"/>
         <h2 class="font-bold text-2xl text-gray-500">Technic Service</h2>
     </div>
 
@@ -57,174 +57,17 @@
                 <i class="ri-arrow-right-s-line ml-auto group-[.selected]:rotate-90"></i>
             </a>
             <ul class="pl-7 mt-2 hidden group-[.selected]:block">
-                @can('admin.users')
+
                     <li class="mb-4">
-                        <a href="{{route('admin.users')}}" class="text-gray-900 text-sm flex items-center hover:text-blue-600 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Ver usuarios</a>
+                        <a href="" class="text-gray-900 text-sm flex items-center hover:text-blue-600 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Ver usuarios</a>
                     </li>
-                 @endcan
-                <li class="mb-4">
-                    <a href="{{route('admin.profile.user')}}" class="text-gray-900 text-sm flex items-center hover:text-blue-600 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Perfil de  usuario</a>
-                </li>
+
+                    <li class="mb-4">
+                        <a href="" class="text-gray-900 text-sm flex items-center hover:text-blue-600 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Perfil de  usuario</a>
+                    </li>
 
             </ul>
         </li>
-
-
-        <!-- Submenu Clients-->
-        @can('admin.clients')
-            <li class="mb-1 group">
-                <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-500 hover:bg-blue-200 hover:text-blue-800 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-blue-200 group-[.selected]:text-blue-800 sidebar-dropdown-toggle">
-                    <i class='bx bx-group mr-3 text-lg'></i>
-                    <span class="text-sm">Clientes</span>
-                    <i class="ri-arrow-right-s-line ml-auto group-[.selected]:rotate-90"></i>
-                </a>
-                <ul class="pl-7 mt-2 hidden group-[.selected]:block">
-                    <li class="mb-4">
-                        <a href="{{route('admin.clients')}}" class="text-gray-900 text-sm flex items-center hover:text-blue-600 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Listar clientes</a>
-                    </li>
-                </ul>
-            </li>
-        @endcan
-
-        @can('admin.planner')
-            <li class="mb-1 group">
-                <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-500 hover:bg-blue-200 hover:text-blue-800 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-blue-200 group-[.selected]:text-blue-800 sidebar-dropdown-toggle">
-                    <i class='bx bx-calendar  mr-3 text-lg'></i>
-                    <span class="text-sm">Planeador</span>
-                    <i class="ri-arrow-right-s-line ml-auto group-[.selected]:rotate-90"></i>
-
-                </a>
-
-                <ul class="pl-7 mt-2 hidden group-[.selected]:block">
-                    <li class="mb-4">
-                        <a href="{{route('admin.planner')}}" class="text-gray-900 text-sm flex items-center hover:text-blue-600 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Planeador general</a>
-                    </li>
-                </ul>
-
-            </li>
-        @endcan
-
-        @can('admin.service-order')
-            <li class="mb-1 group">
-                <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-500 hover:bg-blue-200 hover:text-blue-800 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-blue-200 group-[.selected]:text-blue-800 sidebar-dropdown-toggle">
-                    <i class='bx bx-calendar  mr-3 text-lg'></i>
-                    <span class="text-sm">Ordenes de Serivcio</span>
-                    <i class="ri-arrow-right-s-line ml-auto group-[.selected]:rotate-90"></i>
-
-                </a>
-
-                <ul class="pl-7 mt-2 hidden group-[.selected]:block">
-                    <li class="mb-4">
-                        <a href="{{route('admin.service-order')}}" class="text-gray-900 text-sm flex items-center hover:text-blue-600 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Ordenes generales</a>
-                    </li>
-                    <li class="mb-4">
-                        <a href="{{route('admin.pending')}}" class="text-gray-900 text-sm flex items-center hover:text-blue-600 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Pendientes</a>
-                    </li>
-                </ul>
-
-            </li>
-        @endcan
-
-        @can('admin-store')
-            <li class="mb-1 group">
-                <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-500 hover:bg-blue-200 hover:text-blue-800 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-blue-200 group-[.selected]:text-blue-800 sidebar-dropdown-toggle">
-                    <i class='bx bx-store  mr-3 text-lg'></i>
-                    <span class="text-sm">Almacén</span>
-                    <i class="ri-arrow-right-s-line ml-auto group-[.selected]:rotate-90"></i>
-                </a>
-                <ul class="pl-7 mt-2 hidden group-[.selected]:block">
-                    <li class="mb-4">
-                        <a href="{{route('admin.components')}}" class="text-gray-900 text-sm flex items-center hover:text-blue-600 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Componentes</a>
-                    </li>
-                    <li class="mb-4">
-                        <a href="{{route('admin.materials')}}" class="text-gray-900 text-sm flex items-center hover:text-blue-600 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Materiales</a>
-                    </li>
-                </ul>
-            </li>
-        @endcan
-
-        @can('admin-general-equipments')
-            <li class="mb-1 group">
-                <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-500 hover:bg-blue-200 hover:text-blue-800 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-blue-200 group-[.selected]:text-blue-800 sidebar-dropdown-toggle">
-                    <i class='bx bx-cog  mr-3 text-lg'></i>
-                    <span class="text-sm">Equipos</span>
-                    <i class="ri-arrow-right-s-line ml-auto group-[.selected]:rotate-90"></i>
-                </a>
-                <ul class="pl-7 mt-2 hidden group-[.selected]:block">
-                    <li class="mb-4">
-                        <a href="{{route('admin.equipments')}}" class="text-gray-900 text-sm flex items-center hover:text-blue-600 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Equipos Generales</a>
-                    </li>
-                </ul>
-            </li>
-        @endcan
-
-        @can('admin-preventive')
-            <li class="mb-1 group">
-                <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-500 hover:bg-blue-200 hover:text-blue-800 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-blue-200 group-[.selected]:text-blue-800 sidebar-dropdown-toggle">
-                    <i class='bx bx-wrench  mr-3 text-lg'></i>
-                    <span class="text-sm">Rutina Preventiva</span>
-                    <i class="ri-arrow-right-s-line ml-auto group-[.selected]:rotate-90"></i>
-                </a>
-                <ul class="pl-7 mt-2 hidden group-[.selected]:block">
-                    <li class="mb-4">
-                        <a href="{{route('admin.preventive-activity')}}" class="text-gray-900 text-sm flex items-center hover:text-blue-600 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Actividades</a>
-                    </li>
-                    <li class="mb-4">
-                        <a href="{{route('admin.preventive-routine')}}" class="text-gray-900 text-sm flex items-center hover:text-blue-600 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Rutinas</a>
-                    </li>
-                </ul>
-            </li>
-        @endcan
-
-
-        @can('admin.schedule')
-            <li class="mb-1 group">
-                <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-500 hover:bg-blue-200 hover:text-blue-800 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-blue-200 group-[.selected]:text-blue-800 sidebar-dropdown-toggle">
-                    <i class='bx bx-bar-chart  mr-3 text-lg'></i>
-                    <span class="text-sm">Cronograma de mantenimientos preventivos</span>
-                    <i class="ri-arrow-right-s-line ml-auto group-[.selected]:rotate-90"></i>
-                </a>
-                <ul class="pl-7 mt-2 hidden group-[.selected]:block">
-                    <li class="mb-4">
-                        <a href="{{route('admin.schedule')}}" class="text-gray-900 text-sm flex items-center hover:text-blue-600 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Cronograma general</a>
-                    </li>
-                </ul>
-            </li>
-        @endcan
-
-        <!-- Submenu correctie-->
-        @can('admin.corrective-activities')
-            <li class="mb-1 group">
-                <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-500 hover:bg-blue-200 hover:text-blue-800 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-blue-200 group-[.selected]:text-blue-800 sidebar-dropdown-toggle">
-                    <i class='bx bx-list-ul mr-3 text-lg'></i>
-                    <span class="text-sm">Actividades Correctivas</span>
-                    <i class="ri-arrow-right-s-line ml-auto group-[.selected]:rotate-90"></i>
-                </a>
-                <ul class="pl-7 mt-2 hidden group-[.selected]:block">
-                    <li class="mb-4">
-                        <a href="{{route('admin.corrective-activities')}}" class="text-gray-900 text-sm flex items-center hover:text-blue-600 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Actividades</a>
-                    </li>
-
-                </ul>
-            </li>
-        @endcan
-
-        @can('admin.corrective-management')
-            <li class="mb-1 group">
-                <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-500 hover:bg-blue-200 hover:text-blue-800 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-blue-200 group-[.selected]:text-blue-800 sidebar-dropdown-toggle">
-                    <i class='bx bx-line-chart  mr-3 text-lg'></i>
-                    <span class="text-sm">Gestión de mantenimiento correctivos</span>
-                    <i class="ri-arrow-right-s-line ml-auto group-[.selected]:rotate-90"></i>
-                </a>
-                <ul class="pl-7 mt-2 hidden group-[.selected]:block">
-                    <li class="mb-4">
-                        <a href="{{route('admin.corrective-management')}}" class="text-gray-900 text-sm flex items-center hover:text-blue-600 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Matenimientos Correctivo</a>
-                    </li>
-
-                </ul>
-            </li>
-        @endcan
-
 
     </ul>
 </div>
@@ -382,25 +225,25 @@
                 <button type="button" class="dropdown-toggle flex items-center">
                     <div class="flex-shrink-0 w-10 h-10 relative">
                         <div class="p-1 bg-white rounded-full focus:outline-none focus:ring">
-                            <img class="w-8 h-8 rounded-full" src="{{asset(auth()->user()->url_image)}}" alt=""/>
+                            <img class="w-8 h-8 rounded-full" src="{{asset('image/avatar.jpg')}}" alt=""/>
                             <div class="top-0 left-7 absolute w-3 h-3 bg-lime-400 border-2 border-white rounded-full animate-ping"></div>
                             <div class="top-0 left-7 absolute w-3 h-3 bg-lime-500 border-2 border-white rounded-full"></div>
                         </div>
                     </div>
                     <div class="p-2 md:block text-left">
-                        <h2 class="text-sm font-semibold text-gray-800">{{auth()->user()->name}}</h2>
-                        <p class="text-xs text-gray-500"> {{auth()->user()->roles->first()->name}} </p>
+                        <h2 class="text-sm font-semibold text-gray-800">Alex Hurtado</h2>
+                        <p class="text-xs text-gray-500"> Admin </p>
                     </div>
                 </button>
                 <ul class="dropdown-menu shadow-md shadow-black/5 z-30 hidden py-1.5 rounded-md bg-white border border-gray-100 w-full max-w-[140px]">
                     <li>
-                        <a href="{{route('admin.profile.user')}}" class="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-600 hover:bg-gray-50">Perfil</a>
+                        <a href="" class="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-600 hover:bg-gray-50">Perfil</a>
                     </li>
                     <li>
                         <a href="#" class="hidden flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-600 hover:bg-gray-50">Settings</a>
                     </li>
                     <li>
-                        <form method="POST" action="{{ route('logout') }}">
+                        <form method="POST" action="">
                             @csrf
                             <button type="submit" role="menuitem" class="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-600 hover:bg-gray-50 cursor-pointer">
                                 Log Out
@@ -414,14 +257,14 @@
     <!-- end navbar -->
     <div >
         <!-- Content -->
-        {{ $slot }}
+       @yield('content')
         <!-- End Content -->
     </div>
 
-    @livewireScriptConfig
+
 
 </main>
-@livewire('wire-elements-modal')
+
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 

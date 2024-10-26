@@ -29,8 +29,8 @@
     <nav  class="c-bg-blue py-2" >
       <ul class="flex text-white font-bold   ml-16">
           <li class="mx-10"><a href="{{route('home')}}">Home</a></li>
-          <li class="mx-10"><a href="{{route('service')}}">Service</a></li>
-          <li class="mx-10"><a href="{{route('contact')}}">Contact</a></li>
+          <li class="mx-10"><a href="{{route('service')}}">Servicios</a></li>
+          <li class="mx-10"><a href="{{route('contact')}}">Contacto</a></li>
       </ul>
     </nav>
 
