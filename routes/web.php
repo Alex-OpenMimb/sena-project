@@ -20,9 +20,14 @@ Route::get('/login', function () {
 })->name('login');
 
 Route::prefix('admin')->group(function () {
+
     Route::get('/users', function () {
-        return view('admin.user.index');
+        return view('admin.user.table');
     })->name('admin.user.index');
+
+    Route::get('/users/create', function () {
+        return view('admin.user.form');
+    })->name('admin.user.create');
 
 });
 
