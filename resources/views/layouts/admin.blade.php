@@ -36,37 +36,37 @@
         <!-- Submenu Users-->
 
         <li class="mb-1 group ">
-            <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-500 hover:bg-blue-200 hover:text-blue-800 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-blue-200 group-[.selected]:text-blue-800 sidebar-dropdown-toggle">
+            <a href="{{route('admin.user.index')}}" class=" flex font-semibold items-center py-2 px-4 hover:bg-blue-200 hover:text-blue-800 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-blue-200 group-[.selected]:text-blue-800">
                 <span class="text-xl c-text-blue">Usuarios</span>
             </a>
         </li>
 
 
         <li class="mb-1 group ">
-            <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-500 hover:bg-blue-200 hover:text-blue-800 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-blue-200 group-[.selected]:text-blue-800 sidebar-dropdown-toggle">
+            <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-500 hover:bg-blue-200 hover:text-blue-800 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-blue-200 group-[.selected]:text-blue-800 ">
                 <span class="text-xl c-text-blue">Clientes</span>
             </a>
             <ul class="pl-7 mt-2 ">
                 <li class="mb-4">
-                    <a href="" class="text-gray-900 text-sm flex items-center hover:text-blue-600 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Listar clientes</a>
+                    <a href="{{route('admin.client.index')}}" class="text-gray-900 text-sm flex items-center hover:text-blue-600 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Listar clientes</a>
                 </li>
             </ul>
         </li>
 
         <li class="mb-1 group ">
-            <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-500 hover:bg-blue-200 hover:text-blue-800 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-blue-200 group-[.selected]:text-blue-800 sidebar-dropdown-toggle">
+            <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-500 hover:bg-blue-200 hover:text-blue-800 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-blue-200 group-[.selected]:text-blue-800 ">
                 <span class="text-xl c-text-blue">Servicios</span>
             </a>
         </li>
 
         <li class="mb-1 group ">
-            <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-500 hover:bg-blue-200 hover:text-blue-800 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-blue-200 group-[.selected]:text-blue-800 sidebar-dropdown-toggle">
+            <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-500 hover:bg-blue-200 hover:text-blue-800 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-blue-200 group-[.selected]:text-blue-800 ">
                 <span class="text-xl c-text-blue">Orden de Servicios</span>
             </a>
         </li>
 
         <li class="mb-1 group ">
-            <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-500 hover:bg-blue-200 hover:text-blue-800 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-blue-200 group-[.selected]:text-blue-800 sidebar-dropdown-toggle">
+            <a href="" class="flex font-semibold items-center py-2 px-4 text-gray-500 hover:bg-blue-200 hover:text-blue-800 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-blue-200 group-[.selected]:text-blue-800 ">
                 <span class="text-xl c-text-blue">Facturación</span>
             </a>
         </li>
@@ -79,9 +79,12 @@
 <main class="w-full md:w-3/4 md:ml-64 bg-gray-100 min-h-screen transition-all main">
     <!-- navbar -->
     <div class=" px-6 bg-[#ffffff] flex items-center shadow-md shadow-black/5 sticky top-0 left-0 z-30">
-        <button type="button" class="text-lg text-gray-900 font-semibold sidebar-toggle md:hidden">
-            <i class="ri-menu-line"></i>
-        </button>
+        <a href="{{route('home')}}" class="c-text-blue font-semibold text-xl">Home</a>
+        <div>
+            <button type="button" class="text-lg text-gray-900 font-semibold sidebar-toggle md:hidden">
+                <i class="ri-menu-line"></i>
+            </button>
+        </div>
 
         <ul class="ml-auto flex items-center ">
             <li class="dropdown ml-3">
