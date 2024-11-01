@@ -8,7 +8,7 @@
             <h2 class="text-lg font-bold c-text-blue">Crear Usuario</h2>
             <x-buttons.route class="mr-4" route="admin.user.index" content="Atras"></x-buttons.route>
         </div>
-        <div class="container mx-2  px-4 py-3 mb-8 overflow-x-auto c-bg-gray rounded-lg shadow-md dark:bg-gray-800">
+        <div class=" mx-2  px-4 py-3 mb-8 overflow-x-auto c-bg-gray rounded-lg shadow-md dark:bg-gray-800">
             <form  class="">
                 <div class="md:flex md:items-center mb-4">
                     <div class="md:w-1/2 pr-0 md:pr-4 mb-4 md:mb-0">

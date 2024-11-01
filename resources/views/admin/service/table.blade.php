@@ -7,9 +7,9 @@
         <div class="max-h-screen overflow-y-auto">
             <div class="bg-gray-100 rounded-md p-4 flex justify-between items-center mt-10">
                 <div class="mb-4 md:mb-0">
-                    <h2 class="ml-4 text-lg font-bold c-text-blue ">Usuarios</h2>
+                    <h2 class="ml-4 text-lg font-bold c-text-blue ">Servicios</h2>
                 </div>
-                <x-buttons.route class="mr-4" route="admin.user.create" content="Crear"></x-buttons.route>
+                <x-buttons.route class="mr-4" route="admin.service.create" content="Crear"></x-buttons.route>
             </div>
         </div>
 
@@ -24,10 +24,10 @@
                             Nombre
                         </th>
                         <th class="px-2 text-left text-black bg-neutral-50 dark:text-white dark:bg-neutral-800">
-                            Rol
+                            Tarifa hora
                         </th>
                         <th class="px-2 text-left  text-black bg-neutral-50 dark:text-white dark:bg-neutral-800">
-                            Documentos
+                            Estado
                         </th>
                         <th class="px-2 text-left  text-black bg-neutral-50 dark:text-white dark:bg-neutral-800">
                             Acciones
@@ -37,9 +37,9 @@
                     </thead>
                     <tbody>
                     <tr class="group"  >
-                        <x-table.row> Alex HUrtado</x-table.row>
-                        <x-table.row> Admin </x-table.row>
-                        <x-table.row> 1047221605 </x-table.row>
+                        <x-table.row> Asesoría fiscal </x-table.row>
+                        <x-table.row> $50.000 </x-table.row>
+                        <x-table.row> Activo </x-table.row>
                         <x-table.row>
                             <div class="flex ">
                                 <a   title="editar" class="cursor-pointer  p-1 text-blue-600 rounded hover:bg-blue-600 hover:text-white">
