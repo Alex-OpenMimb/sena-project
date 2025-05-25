@@ -26,7 +26,8 @@ class UserSeeder extends Seeder
             'name'              => 'Administrador',
             'email'             => 'alexdavidhurtado@gmail.com',
             'phone'             => '3007208245',
-            'status'             => true,
+            'status'            => true,
+            'documentId'        => 104721605,
             'password'          => Hash::make('Admin911$01'),
         ]);
 
@@ -34,6 +35,7 @@ class UserSeeder extends Seeder
             'name'              => 'Paola Ocampo',
             'phone'             => '3857208245',
             'email'             => 'paola@email.com',
+            'documentId'        => 104721606,
             'password'          => Hash::make('Angie123456'),
             'status'             => true,
         ]);
@@ -42,6 +44,7 @@ class UserSeeder extends Seeder
             'name'              => 'Luz Dary Giraldo',
             'phone'             => '31207208245',
             'email'             => 'luz@email.com',
+            'documentId'        => 104721607,
             'password'          => Hash::make('Andres123456'),
             'status'             => true,
         ]);
@@ -50,6 +53,7 @@ class UserSeeder extends Seeder
             'name'              => 'Carlos Suarez',
             'phone'             => '3007278245',
             'email'             => 'carlos@email.com',
+            'documentId'        => 104721608,
             'password'          => Hash::make('Carlos123456'),
             'status'             => true,
         ]);
@@ -58,6 +62,7 @@ class UserSeeder extends Seeder
             'name'              => 'Luis Gomez',
             'phone'             => '3007208975',
             'email'             => 'luis@email.com',
+            'documentId'        => 104721695,
             'password'          => Hash::make('LuisGomez123456'),
             'status'             => false,
         ]);
