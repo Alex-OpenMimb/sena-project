@@ -14,7 +14,14 @@ class RoleSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        if( !Role::count() ){
+            $this->create_roles();
+            $this->create_permissions();
+            $roles = $this->extract_roles();
+            $this->assign_high_permissions($roles);
+            $this->assign_medium_permissions( $roles);
+            $this->assign_uditor_permissions( $roles);
+        }
     }
 
 
@@ -36,7 +43,7 @@ class RoleSeeder extends Seeder
     private function create_permissions()
     {
         $PERMISSIONS = [
-            'admin.users',
+            'admin.user.index',
 
         ];
 
@@ -44,4 +51,62 @@ class RoleSeeder extends Seeder
             Permission::create(['name'=> $permission]);
         }
     }
+
+
+    private function extract_roles()
+    {
+        $admin = Role::where('name','Admin')->get();
+        $aux = Role::where('name','Auxiliar')->get();
+        $auditor = Role::where('name','Auditor')->get();
+
+        return [
+            'admin'=> $admin,
+            'aux'=> $aux,
+            'auditor'=> $auditor,
+        ];
+    }
+
+
+    private function assign_high_permissions( $roles)
+    {
+        $admin      = $roles['admin'];
+        $aux        = $roles['aux'];
+        $auditor    =  $roles['auditor'];
+        $high_permissions = Permission::all();
+        foreach ( $high_permissions AS $index => $permission ){
+            $permission->syncRoles([$admin,$aux, $auditor]);
+        }
+
+    }
+
+    private function assign_medium_permissions( $roles )
+    {
+        $medium_permissions = [
+            'admin.user.index',
+
+        ];
+        $permissions = Permission::whereIn('name',$medium_permissions)->get();
+
+        foreach ( $permissions AS $index => $permission ){
+            $permission->assignRole($roles['aux']);
+        }
+
+    }
+
+    private function assign_uditor_permissions( $roles )
+    {
+        $medium_permissions = [
+            'admin.user.index',
+
+        ];
+        $permissions = Permission::whereIn('name',$medium_permissions)->get();
+
+        foreach ( $permissions AS $index => $permission ){
+            $permission->assignRole($roles['auditor']);
+        }
+
+    }
+
+
+
 }

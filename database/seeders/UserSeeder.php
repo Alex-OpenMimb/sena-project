@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
             'status'            => true,
             'documentId'        => 104721605,
             'password'          => Hash::make('Admin911$01'),
-        ]);
+        ])->syncRoles('Admin');
 
         User::create([
             'name'              => 'Paola Ocampo',
@@ -38,7 +38,7 @@ class UserSeeder extends Seeder
             'documentId'        => 104721606,
             'password'          => Hash::make('Angie123456'),
             'status'             => true,
-        ]);
+        ])->syncRoles('Auxiliar');
 
         User::create([
             'name'              => 'Luz Dary Giraldo',
@@ -47,7 +47,7 @@ class UserSeeder extends Seeder
             'documentId'        => 104721607,
             'password'          => Hash::make('Andres123456'),
             'status'             => true,
-        ]);
+        ])->syncRoles('Auditor');
 
         User::create([
             'name'              => 'Carlos Suarez',
@@ -56,7 +56,7 @@ class UserSeeder extends Seeder
             'documentId'        => 104721608,
             'password'          => Hash::make('Carlos123456'),
             'status'             => true,
-        ]);
+        ])->syncRoles('Auditor');
 
         User::create([
             'name'              => 'Luis Gomez',
@@ -65,6 +65,6 @@ class UserSeeder extends Seeder
             'documentId'        => 104721695,
             'password'          => Hash::make('LuisGomez123456'),
             'status'             => false,
-        ]);
+        ])->syncRoles('Auditor');
     }
 }
