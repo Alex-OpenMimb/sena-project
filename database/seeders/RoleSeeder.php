@@ -44,6 +44,7 @@ class RoleSeeder extends Seeder
     {
         $PERMISSIONS = [
             'admin.user.index',
+            'admin.user.create'
 
         ];
 
@@ -70,11 +71,10 @@ class RoleSeeder extends Seeder
     private function assign_high_permissions( $roles)
     {
         $admin      = $roles['admin'];
-        $aux        = $roles['aux'];
-        $auditor    =  $roles['auditor'];
+
         $high_permissions = Permission::all();
         foreach ( $high_permissions AS $index => $permission ){
-            $permission->syncRoles([$admin,$aux, $auditor]);
+            $permission->syncRoles([$admin]);
         }
 
     }
@@ -97,6 +97,7 @@ class RoleSeeder extends Seeder
     {
         $medium_permissions = [
             'admin.user.index',
+            'admin.user.create'
 
         ];
         $permissions = Permission::whereIn('name',$medium_permissions)->get();

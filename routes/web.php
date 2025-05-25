@@ -25,10 +25,9 @@ Route::get('/contact', function () {
 Route::prefix('admin')->group(function () {
 
     Route::get('/users',[\App\Http\Controllers\UserController::class,'index'])->name('admin.user.index');
+    Route::get('/users/create',[\App\Http\Controllers\UserController::class,'create'])->name('admin.user.create');
 
-    Route::get('/users/create', function () {
-        return view('admin.user.form');
-    })->name('admin.user.create');
+
 
     Route::get('/clients', function () {
         return view('admin.client.table');

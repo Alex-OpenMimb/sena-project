@@ -41,7 +41,11 @@
                     @foreach( $users as $user )
                     <tr class="group"  >
                             <x-table.row> {{ $user->name }}</x-table.row>
-                            <x-table.row> Admin </x-table.row>
+                            <x-table.row>
+                                @foreach( $user->roles as $role)
+                                    {{ $role->name  }}
+                                @endforeach
+                            </x-table.row>
                             <x-table.row> {{ $user->phone }} </x-table.row>
                             <x-table.row> {{ $user->documentId }} </x-table.row>
                             <x-table.row>
